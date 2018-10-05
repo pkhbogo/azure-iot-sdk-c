@@ -1,6 +1,7 @@
 set(mbed_project_files
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../inc/iothubtransportamqp.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../inc/internal/iothub_client_retry_control.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../../inc/internal/iothub_transport_ll_private.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../inc/internal/iothubtransport_amqp_common.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../inc/internal/iothubtransport_amqp_cbs_auth.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../inc/internal/iothubtransport_amqp_connection.h
@@ -13,6 +14,7 @@ set(mbed_project_files
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../inc/internal/message_queue.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../src/iothub_client_retry_control.c
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../src/iothubtransportamqp.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../../src/iothub_transport_ll_private.c
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../src/iothubtransport_amqp_common.c
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../src/iothubtransport_amqp_cbs_auth.c
         ${CMAKE_CURRENT_SOURCE_DIR}/../../../src/iothubtransport_amqp_connection.c
