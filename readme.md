@@ -1,30 +1,38 @@
 # Azure IoT C SDKs and Libraries
 
+[![Build Status](https://azure-iot-sdks.visualstudio.com/azure-iot-sdks/_apis/build/status/integrate-into-repo-c)](https://azure-iot-sdks.visualstudio.com/azure-iot-sdks/_build/latest?definitionId=14)
+
 This repository contains the following:
+
 * **Azure IoT Hub Device C SDK** to connect devices running C code to Azure IoT Hub.
 * **Azure IoT Hub Device Provisioning Service Client SDK** for enrolling devices with [Azure IoT Device Provisioning Services](https://docs.microsoft.com/azure/iot-dps/) and managing enrollments lists.
 * **Azure IoT Hub Service C SDK** to interface with an Azure IoT Hub service instance from a server-side C application.
 * **Serializer Library for C** to help serialize and deserialize data on your device.
 
 ## Packages and Libraries
+
   The simplest way to get started with the Azure IoT SDKs is to use the following packages and libraries:
-  * Linux: [Device SDK on apt-get](./iothub_client/readme.md#aptgetpackage)
-  * mbed:                                      [Device SDK library on MBED](./iothub_client/readme.md#mbed)
-  * Arduino:                                   [Device SDK library in the Arduino IDE](./iothub_client/readme.md#arduino)
-  * Windows:                                   [Device SDK on NuGet](./iothub_client/readme.md#nugetpackage)
-  * iOS:                                       [Device SDK on CocoaPod](https://cocoapods.org/pods/AzureIoTHubClient)
+
+* Linux: [Device SDK on apt-get](./iothub_client/readme.md#aptgetpackage)
+* mbed:                                      [Device SDK library on MBED](./iothub_client/readme.md#mbed)
+* Arduino:                                   [Device SDK library in the Arduino IDE](./iothub_client/readme.md#arduino)
+* Windows:                                   [Device SDK on NuGet](./iothub_client/readme.md#nugetpackage)
+* iOS:                                       [Device SDK on CocoaPod](https://cocoapods.org/pods/AzureIoTHubClient)
 
 ## Samples
+
   Here are a set of simple samples that will help you get started:
-  * [Device SDK Samples](./iothub_client/samples/)
-  * [Service SDK Samples](./iothub_service_client/samples/)
-  * [Serializer Library Samples](./serializer/samples/)
+
+* [Device SDK Samples](./iothub_client/samples/)
+* [Service SDK Samples](./iothub_service_client/samples/)
+* [Serializer Library Samples](./serializer/samples/)
 
 ## Compile the SDK
 
 When no package or library is available for your platform or if you want to modify the SDK code, or port the SDK to a new platform, then you can leverage the build environment provided in the repository.
-  * [Device SDK](./iothub_client/readme.md#compile)
-  * [Service SDK](./iothub_service_client/readme.md#compile)
+
+* [Device SDK](./iothub_client/readme.md#compile)
+* [Service SDK](./iothub_service_client/readme.md#compile)
 
 ## SDK API Reference Documentation
 
@@ -41,6 +49,7 @@ To learn more about building Azure IoT Applications, you can visit the [Azure Io
 ## Key Features and Roadmap
 
 ### Device Client SDK
+
 :heavy_check_mark: feature available  :heavy_multiplication_x: feature planned but not supported  :heavy_minus_sign: no support planned
 
 | Features                                                                                                         | mqtt                | mqtt-ws             | amqp                     | amqp-ws                  | https                    | Description                                                                                                                                                                                                                                                                                                       |
@@ -56,11 +65,10 @@ To learn more about building Azure IoT Applications, you can visit the [Azure Io
 | Devices multiplexing over single connection                                                                      | :heavy_minus_sign:  | :heavy_minus_sign:  | :heavy_check_mark:       | :heavy_check_mark:       | :heavy_check_mark:       |                                                                                                                                                                                                                                                                                                                   |
 | Connection Pooling - Specifying number of connections                                                            | :heavy_minus_sign:  | :heavy_minus_sign:  | :heavy_multiplication_x: | :heavy_multiplication_x: | :heavy_multiplication_x: |                                                                                                                                                                                                                                                                                                                   |
 
-
 This SDK also contains options you can set and platform specific features.  You can find detail list in this [document](./doc/Iothub_sdk_options.md).
 
-
 ### Service Client SDK
+
 :heavy_check_mark: feature available  :heavy_multiplication_x: feature planned but not supported  :heavy_minus_sign: no support planned
 
 | Features                                                                                                      | C                  | Description                                                                                                                        |
@@ -86,6 +94,7 @@ This repository contains [provisioning client SDK](./provisioning_client) for th
 | X.509 Enrollment Group      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | This SDK supports connecting your device to the Device Provisioning Service via [enrollment group](https://docs.microsoft.com/azure/iot-dps/concepts-service#enrollment) using [X.509 root certificate](https://docs.microsoft.com/azure/iot-dps/concepts-security#root-certificate).                                                                                                                                                                                         |
 
 ### Provisioniong Service SDK
+
 This repository contains [provisioning service client SDK](./provisioning/service/) for the Device Provisioning Service to [programmatically enroll devices](https://docs.microsoft.com/en-us/azure/iot-dps/how-to-manage-enrollments-sdks).
 
 | Feature                                            | Support            | Description                                                                                                                                                                                                                                            |
@@ -102,11 +111,11 @@ The IoT Hub device SDK for C can be used with a broad range of OS platforms and 
 
 The minimum requirements are for the device platform to support the following:
 
-- **Being capable of establishing an IP connection**: only IP-capable devices can communicate directly with Azure IoT Hub.
-- **Support TLS**: required to establish a secure communication channel with Azure IoT Hub.
-- **Support SHA-256** (optional): necessary to generate the secure token for authenticating the device with the service. Different authentication methods are available and not all require SHA-256.
-- **Have a Real Time Clock or implement code to connect to an NTP server**: necessary for both establishing the TLS connection and generating the secure token for authentication.
-- **Having at least 64KB of RAM**: the memory footprint of the SDK depends on the SDK and protocol used as well as the platform targeted. The smallest footprint is achieved targeting microcontrollers.
+* **Being capable of establishing an IP connection**: only IP-capable devices can communicate directly with Azure IoT Hub.
+* **Support TLS**: required to establish a secure communication channel with Azure IoT Hub.
+* **Support SHA-256** (optional): necessary to generate the secure token for authenticating the device with the service. Different authentication methods are available and not all require SHA-256.
+* **Have a Real Time Clock or implement code to connect to an NTP server**: necessary for both establishing the TLS connection and generating the secure token for authentication.
+* **Having at least 64KB of RAM**: the memory footprint of the SDK depends on the SDK and protocol used as well as the platform targeted. The smallest footprint is achieved targeting microcontrollers.
 
 Platform support details can be found in [this document](https://docs.microsoft.com/azure/iot-hub/iot-hub-device-sdk-platform-support).
 You can find an exhaustive list of the OS platforms the various SDKs have been tested against in the [Azure Certified for IoT device catalog](https://catalog.azureiotsuite.com/). Note that you might still be able to use the SDKs on OS and hardware platforms that are not listed on this page: all the SDKs are open sourced and designed to be portable. If you have suggestions, feedback or issues to report, refer to the Contribution and Support sections below.
@@ -114,6 +123,7 @@ You can find an exhaustive list of the OS platforms the various SDKs have been t
 ## Porting the Azure IoT Device Client SDK for C to New Devices
 
 The C SDKs and Libraries:
+
 * Are written in ANSI C (C99) and avoids compiler extensions to maximize code portability and broad platform compatibility.
 * Expose a platform abstraction layer to isolate OS dependencies (threading and mutual exclusion mechanisms, communications protocol e.g. HTTP). Refer to our [porting guide][c-porting-guide] for more information about our abstraction layer.
 
@@ -126,6 +136,7 @@ If you are considering porting the device client SDK for C to a new platform, ch
 If you encounter any bugs, have suggestions for new features or if you would like to become an active contributor to this project please follow the instructions provided in the [contribution guidelines](.github/CONTRIBUTING.md).
 
 ## Support
+
 * Have a feature request for SDKs? Please post it on [User Voice](https://feedback.azure.com/forums/321918-azure-iot) to help us prioritize.
 * Have a technical question? Ask on [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-iot-hub) with tag "azure-iot-hub".
 * Need Support? Every customer with an active Azure subscription has access to [support](https://docs.microsoft.com/en-us/azure/azure-supportability/how-to-create-azure-support-request) with guaranteed response time.  Consider submitting a ticket and get assistance from Microsoft support team
@@ -171,23 +182,23 @@ This folder contains platform-specific build scripts for the client libraries an
 
 Contains Azure IoT Hub client components that provide the raw messaging capabilities of the library. Refer to the API documentation and samples for information on how to use it.
 
-   * build: has one subfolder for each platform (e.g. Windows, Linux, Mbed). Contains makefiles, batch files, and solutions that are used to generate the library binaries.
-   * devdoc: contains requirements, designs notes, manuals.
-   * inc: public include files.
-   * src: client libraries source files.
-   * samples: contains simple samples.
-   * tests: unit and end-to-end tests for source code.
+* build: has one subfolder for each platform (e.g. Windows, Linux, Mbed). Contains makefiles, batch files, and solutions that are used to generate the library binaries.
+* devdoc: contains requirements, designs notes, manuals.
+* inc: public include files.
+* src: client libraries source files.
+* samples: contains simple samples.
+* tests: unit and end-to-end tests for source code.
 
 ### /serializer
 
 Contains libraries that provide modeling and JSON serialization capabilities on top of the raw messaging library. These libraries facilitate uploading structured data and command and control for use with Azure IoT services. Refer to the API documentation and samples for information on how to use it.
 
-   * build: has one subfolder for each platform (e.g. Windows, Linux, Mbed). Contains makefiles, batch files, and solutions that are used to generate the library binaries.
-   * devdoc: contains requirements, designs notes, manuals.
-   * inc: public include files.
-   * src: client libraries source files.
-   * samples: contains simple samples.
-   * tests: unit tests and end-to-end tests for source code.
+* build: has one subfolder for each platform (e.g. Windows, Linux, Mbed). Contains makefiles, batch files, and solutions that are used to generate the library binaries.
+* devdoc: contains requirements, designs notes, manuals.
+* inc: public include files.
+* src: client libraries source files.
+* samples: contains simple samples.
+* tests: unit tests and end-to-end tests for source code.
 
 ### /iothub_service_client
 
@@ -207,8 +218,8 @@ The project offers a Long Term Support (LTS) version to allow users that do not 
 
 A new LTS version will be created every 6 months. The lifetime of an LTS branch is currently planned for one year. LTS branches receive all bug fixes that fall in one of these categories:
 
-- security bugfixes
-- critical bugfixes (crashes, memory leaks, etc.)
+* security bugfixes
+* critical bugfixes (crashes, memory leaks, etc.)
 
 No new features or improvements will be picked up in an LTS branch.
 
@@ -223,11 +234,11 @@ Below is a table showing the mapping of the LTS branches to the packages release
 | Nuget: 1.1.33<br/> Xenial: 0.1.0.0-35xenial<br/> Trusty: 0.1.0-37trusty<br/>     | lts_01_2018   | Active     | 2018-01-01     | 2018-06-30           | 2018-12-31   |
 | 1.x.x         | lts_07_2017   | Deprecated | 2017-07-01     | 2017-12-31           | 2018-06-30   |
 
-
 * <sup>1</sup> All scheduled dates are subject to change by the Azure IoT SDK team.
 
 ### Planned Release Schedule
-![](./lts_branches.png)
+
+![lts_branches.png](./lts_branches.png)
 
 ---
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
