@@ -38,6 +38,7 @@ EXPORTS
     IoTHubClient_SetDeviceTwinCallback
     IoTHubClient_SendReportedState
     IoTHubClient_SetDeviceMethodCallback
+    IoTHubClient_GetDeviceTwin
 
     IoTHubDeviceClient_CreateFromConnectionString
     IoTHubDeviceClient_Create
