@@ -1401,7 +1401,7 @@ TRANSPORT_LL_HANDLE IoTHubTransport_AMQP_Common_Create(const IOTHUBTRANSPORT_CON
     // Codes_SRS_IOTHUBTRANSPORT_AMQP_COMMON_09_002: [IoTHubTransport_AMQP_Common_Create shall fail and return NULL if `config->upperConfig->protocol` is NULL]
     else if (config->upperConfig->protocol == NULL)
     {
-        LogError("Failed to create the AMQP transport common instance (NULL parameter received: protocol)", config->upperConfig->protocol);
+        LogError("Failed to create the AMQP transport common instance (NULL parameter received: protocol)");
         result = NULL;
     }
     else if (IoTHub_Transport_ValidateCallbacks(cb_info) != 0)
